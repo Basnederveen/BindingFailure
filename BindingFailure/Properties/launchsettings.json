@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "BindingFailure (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "BindingFailure (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
