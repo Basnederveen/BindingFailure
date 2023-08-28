@@ -2,6 +2,10 @@
 
 namespace BindingFailure.ViewModels;
 
+
+/// <summary>
+/// 
+/// </summary>
 public class ViewConfiguration
 {
     public double X
@@ -144,6 +148,8 @@ public partial class ViewConfigurationViewModel : ObservableObject
 
             if (ViewConfiguration.BaseView != value?.ViewConfiguration)
                 ViewConfiguration.BaseView = value?.ViewConfiguration;
+
+            OnPropertyChanged();
         }
     }
 

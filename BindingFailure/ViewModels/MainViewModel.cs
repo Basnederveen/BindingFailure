@@ -42,7 +42,15 @@ public partial class MainViewModel : ObservableRecipient
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(OtherViewConfigurations))]
+    [NotifyPropertyChangedFor(nameof(SelectedBaseViewConfiguration))]
     private ViewConfigurationViewModel? selectedViewConfiguration;
+
+
+    public ViewConfigurationViewModel? SelectedBaseViewConfiguration
+    {
+        get => SelectedViewConfiguration?.BaseView;
+        set => SetProperty(SelectedViewConfiguration.BaseView, value, SelectedViewConfiguration, (u, n) => u.BaseView = n); 
+    }
 
     [ObservableProperty]
     private ObservableCollection<ViewConfigurationViewModel>? viewConfigurations;
@@ -74,7 +82,6 @@ public partial class MainViewModel : ObservableRecipient
     [RelayCommand]
     private void ViewConfigurationClicked(ViewConfigurationViewModel item)
     {
-        // item.BaseView is not null here
         SelectedViewConfiguration = item;
 
         var test = OtherViewConfigurations.Contains(item.BaseView);

@@ -104,7 +104,7 @@
                             <ComboBox Header="Base view"  
                                     HorizontalAlignment="Stretch"
                                     ItemsSource="{x:Bind ViewModel.OtherViewConfigurations, Mode=OneWay}"
-                                    SelectedItem="{x:Bind ViewModel.SelectedViewConfiguration.BaseView, Mode=OneWay}">
+                                    SelectedItem="{x:Bind ViewModel.SelectedBaseViewConfiguration, Mode=TwoWay}">
 
                                 <!-- TODO: what's wrong with this box - does not want to select anything, with twoway its set to null -->
 
